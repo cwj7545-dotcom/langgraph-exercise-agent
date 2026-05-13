@@ -79,27 +79,25 @@
 
 ## 6. Repository 구조
 
+현재 Repository 구조는 다음과 같습니다.
+
 ```text
 langgraph-exercise-agent/
 │
-├── main.py
 ├── README.md
+├── main.py
 ├── requirements.txt
-├── .gitignore
-│
-└── assets/
-    ├── graph_structure.png
-    └── result_capture.png
+├── graph_structure.png
+└── result_capture.png
 ```
 
-| 파일 / 폴더 | 설명 |
+| 파일 | 설명 |
 |---|---|
-| `main.py` | LangGraph 멀티에이전트 실행 코드 |
 | `README.md` | 프로젝트 설명 문서 |
+| `main.py` | LangGraph 멀티에이전트 실행 코드 |
 | `requirements.txt` | 실행에 필요한 Python 라이브러리 목록 |
-| `.gitignore` | GitHub에 올리지 않을 파일 설정 |
-| `assets/graph_structure.png` | LangGraph 그래프 구조 이미지 |
-| `assets/result_capture.png` | 실행 결과 캡처 이미지 |
+| `graph_structure.png` | LangGraph 그래프 구조 이미지 |
+| `result_capture.png` | 실행 결과 캡처 이미지 |
 
 ---
 
@@ -149,7 +147,7 @@ class AgentState(TypedDict, total=False):
 아래 이미지는 LangGraph로 구성한 에이전트 실행 구조입니다.
 
 <p align="center">
-  <img src="./assets/graph_structure.png" alt="LangGraph 그래프 구조" width="300">
+  <img src="graph_structure.png" alt="LangGraph 그래프 구조" width="300">
 </p>
 
 그래프는 다음 순서로 실행됩니다.
@@ -173,7 +171,7 @@ __start__ → extractor → candidate → answer → __end__
 LangGraph 실행 결과는 아래와 같습니다.
 
 <p align="center">
-  <img src="./assets/result_capture.png" alt="LangGraph 실행 결과" width="900">
+  <img src="result_capture.png" alt="LangGraph 실행 결과" width="900">
 </p>
 
 실행 흐름은 다음과 같이 구성됩니다.
