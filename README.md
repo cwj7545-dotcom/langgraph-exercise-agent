@@ -77,19 +77,7 @@
 
 ---
 
-## 6. 사용 모델
-
-본 프로젝트에서는 Ollama를 통해 로컬 LLM 모델을 실행합니다.
-
-```python
-llm = Ollama(model="exaone3.5:7.8b")
-```
-
-Ollama를 사용하면 외부 API Key 없이 로컬 환경에서 LLM 기반 에이전트 실습을 진행할 수 있습니다.
-
----
-
-## 7. Repository 구조
+## 6. Repository 구조
 
 ```text
 langgraph-exercise-agent/
@@ -112,6 +100,18 @@ langgraph-exercise-agent/
 | `.gitignore` | GitHub에 올리지 않을 파일 설정 |
 | `assets/graph_structure.png` | LangGraph 그래프 구조 이미지 |
 | `assets/result_capture.png` | 실행 결과 캡처 이미지 |
+
+---
+
+## 7. 사용 모델
+
+본 프로젝트에서는 Ollama를 통해 로컬 LLM 모델을 실행합니다.
+
+```python
+llm = Ollama(model="exaone3.5:7.8b")
+```
+
+Ollama를 사용하면 외부 API Key 없이 로컬 환경에서 LLM 기반 에이전트 실습을 진행할 수 있습니다.
 
 ---
 
@@ -148,7 +148,9 @@ class AgentState(TypedDict, total=False):
 
 아래 이미지는 LangGraph로 구성한 에이전트 실행 구조입니다.
 
-![LangGraph 구조](./assets/graph_structure.png)
+<p align="center">
+  <img src="./assets/graph_structure.png" alt="LangGraph 그래프 구조" width="300">
+</p>
 
 그래프는 다음 순서로 실행됩니다.
 
@@ -170,7 +172,9 @@ __start__ → extractor → candidate → answer → __end__
 
 LangGraph 실행 결과는 아래와 같습니다.
 
-![실행 결과](./assets/result_capture.png)
+<p align="center">
+  <img src="./assets/result_capture.png" alt="LangGraph 실행 결과" width="900">
+</p>
 
 실행 흐름은 다음과 같이 구성됩니다.
 
@@ -301,6 +305,12 @@ app = graph.compile()
 위 코드는 LangGraph의 핵심 구조입니다.
 
 각 에이전트를 노드로 추가하고, `add_edge()`를 통해 실행 순서를 정의합니다.
+
+최종 실행 흐름은 다음과 같습니다.
+
+```text
+extractor → candidate → answer
+```
 
 ---
 
