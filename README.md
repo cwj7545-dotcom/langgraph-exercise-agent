@@ -79,7 +79,7 @@
 
 ## 6. Repository 구조
 
-현재 Repository 구조는 다음과 같습니다.
+Repository 구조는 다음과 같습니다.
 
 ```text
 langgraph-exercise-agent/
@@ -144,7 +144,7 @@ class AgentState(TypedDict, total=False):
 
 ## 9. 그래프 구조
 
-아래 이미지는 LangGraph로 구성한 에이전트 실행 구조입니다.
+LangGraph로 구성한 에이전트 실행 구조입니다.
 
 <p align="center">
   <img src="graph_structure.png" alt="LangGraph 그래프 구조" width="300">
